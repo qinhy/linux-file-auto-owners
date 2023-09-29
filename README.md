@@ -32,6 +32,7 @@ do
     username=$(echo "$file" | cut -d '/' -f3)
     if [ -n "$username" ]; then
         chown $username:$username "$file"
+        chmod 750 "$file"   # Modifying permission here
     fi
 done
 ```
